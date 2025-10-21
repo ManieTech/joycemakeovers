@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyce Makeovers</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      .navbar {
+        background-color:rgb(241, 241, 238) !important;
+        
+    
+      }
+      .navbar-brand {
+        font-weight: bold;
+        color:  #8B0F2A !important;
+        font-style: normal;
+        font-size: 2rem;
+        letter-spacing: 0.5px;
+        
+      }
+
+      /* General navbar link color */
+.navbar .nav-link {
+  color: #8B0F2A; /* your Velvet Wine color */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* On hover */
+.navbar .nav-link:hover {
+  color: #edba12; /* gold accent or any contrast color */
+}
+
+/* Active (current section) */
+.navbar .nav-link.active {
+  color: #8B0F2A;
+  border-bottom: 2px solid #8B0F2A; /* optional underline effect */
+}
+
+
+      .hero {
+    position: relative;
+    height: 100vh; /* full screen height */
+    width: 100%;
+    overflow: hidden;
+    }
+
+    .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            }
+
+            /* overlay adds a soft dark layer for better text visibility */
+            .hero .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.158);
+            z-index: 2;
+            }
+
+            /* your text area */
+            .hero .content {
+            position: relative;
+            z-index: 3;
+            color: rgb(241, 241, 238);
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            padding: 0 20px;
+            }
+
+        .hero .content h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: rgb(241, 241, 238);
+        }
+
+        .hero .content p {
+        font-size: 1.25rem;
+        color: rgb(241, 241, 238);
+        margin-bottom: 20px;
+        }
+
+        .hero .btn {
+        font-weight: 500;
+        background-color: rgb(241, 241, 238);
+        color:#8B0F2A;
+        border-radius: 30px;
+        padding: 10px 30px;
+        transition: all 0.3s ease;
+        }
+
+        .hero .btn:hover {
+        background-color: #8B0F2A;
+        color: #fff;
+        }
+
+
+      .hero h1 {
+        font-size: 3rem;
+        font-weight: 700;
+      }
+
+      .section-title {
+        text-align: center;
+        font-weight: bold;
+        color: #8B0F2A;
+        margin-bottom: 30px;
+      }
+
+      /* About Section */
+      .about-section {
+  background-color: #FFF8E7; /* soft cream background */
+  color: #2C2C2C;
+}
+
+
+/* === Gallery Section Styling === */
+#gallery img {
+  width: 100%;
+  height: 500px;          /* You can adjust this height (e.g. 250px or 350px) */
+  object-fit: cover;      /* Makes sure images fill their box neatly */
+  border-radius: 10px;    /* Keeps the rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#gallery img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Align section title nicely */
+#gallery .section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+  color: #6b0f1a; /* Wine color (matches the website theme) */
+}
+
+
+.about-section .section-title {
+  font-family: 'Playfair Display', serif;
+  color: #8B0F2A; /* wine color */
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.about-section .section-title span {
+  color: #D4AF37; /* gold accent */
+}
+
+.about-section p {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.about-section .tagline {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #8B0F2A;
+  border-left: 4px solid #D4AF37;
+  padding-left: 15px;
+}
+
+.btn-pink {
+  background-color: #8B0F2A;
+  color: #fff;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-pink:hover {
+  background-color: #D4AF37;
+  color: #8B0F2A;
+}
+
+
+      .service-card img {
+        height: 400px;
+        object-fit: center;
+      }
+
+      footer {
+        background-color: #8B0F2A;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 50px;
+      }
+
+      .btn-pink {
+        background-color: #8B0F2A;
+        color: white;
+      }
+      .btn-pink:hover {
+        background-color:#8B0F2A;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+         <img 
+        src="image/RBlogo.png" 
+        alt="Joyce Makeovers Logo" 
+        style="height: 70px; width: auto; object-fit: contain; margin-right: 10px;"/>
+        <a class="navbar-brand" href="#">Joyce Makeovers</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#booking">Booking</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <img src="image/joyce.png" alt="Makeup Studio" />
+        <div class="overlay"></div>
+
+        <div class="content text-center">
+            <h1>Enhancing Your Natural Glow</h1>
+            <p class="lead">Professional makeup services for every occasion</p>
+            <a href="#booking" class="btn btn-light btn-lg mt-3">Book Appointment</a>
+        </div>
+    </section>
+
+     <!-- ========== ABOUT SECTION ========== -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                    
+                <!-- Image Side -->
+                <div class="col-md-5 mb-4 mb-md-0">
+                    <img src="image/about.png" alt="Joyce Makeovers Studio" class="img-fluid rounded shadow">
+                </div>
+                    
+                <!-- Text Side -->
+                <div class="col-md-7">
+                    <h2 class="section-title mb-3">About <span>Joyce Makeovers</span></h2>
+                    <p class="lead text-muted">At <strong>Joyce Makeovers</strong>, beauty is more than appearance, it’s confidence, expression, and identity. 
+                    We believe every face tells a story, and our passion is to highlight the best version of <em>you</em>.
+                    </p>
+                    <p>Founded on the values of <strong>elegance, precision, and creativity</strong>, Joyce Makeovers has become a trusted name 
+                        in professional makeup artistry and beauty enhancement. Whether it’s a bridal glam, photoshoot, red carpet, or everyday radiance, 
+                        we tailor every look to suit your personality, skin tone, and style.
+                    </p>
+                    <p>Our mission is simple to <strong>empower beauty with purpose.</strong> Through the perfect blend of artistry and 
+                        premium products, we ensure every client leaves our studio not just looking beautiful, but feeling confident, valued, 
+                        and unforgettable.
+                    </p>
+                    <blockquote class="tagline mt-3">“Enhancing Your Natural Glow with Class and Confidence.”</blockquote>
+                    <a href="#booking" class="btn btn-pink mt-4 px-4 py-2">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="container my-5">
+      <h2 class="section-title">Our Services</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card service-card shadow-sm">
+            <img src="image/glim1.jpg"Bridal Makeup" />
+            <div class="card-body">
+              <h5 class="card-title">Bridal Glam</h5>
+              <p class="card-text">Perfectly curated bridal looks that make your big day unforgettable.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card shadow-sm">
+            <img src="image/convo4.jpg"Bridal Makeup" />
+            <div class="card-body">
+              <h5 class="card-title">Matriculation/Convocation Makeup</h5>
+              <p class="card-text">Step into your big day with confidence and flawless beauty.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card shadow-sm">
+            <img src="image/party1.jpg" class="card-img-top" alt="Party Glam" />
+            <div class="card-body">
+              <h5 class="card-title">Party Glam</h5>
+              <p class="card-text">Get the perfect glow for birthdays, red carpets, and social events.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card shadow-sm">
+            <img src="image/shoot1.jpg" class="card-img-top" alt="Photoshoot Look" />
+            <div class="card-body">
+              <h5 class="card-title">Photoshoot Looks</h5>
+              <p class="card-text">Flawless makeup designed to bring out your best angles in every frame.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card shadow-sm">
+            <img src="image/birthday2.jpg" class="card-img-top" alt="Party Glam" />
+            <div class="card-body">
+              <h5 class="card-title">Birthday Makeup</h5>
+              <p class="card-text">Get the perfect glow for birthdays, red carpets, and social events.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card shadow-sm">
+            <img src="image/gele1.jpg" class="card-img-top" alt="Party Glam" />
+            <div class="card-body">
+              <h5 class="card-title">Gele tying</h5>
+              <p class="card-text">Get the perfect glow for birthdays, red carpets, and social events.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="container my-5">
+      <h2 class="section-title">Our Gallery</h2>
+      <div class="row g-3">
+        <div class="col-md-4"><img src="image/R1.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/R2.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/R3.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/kit1.webp" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/gal1.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/R4.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/R5.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/R6.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/convo1.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/R7.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/R8.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/convo2.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/convo3.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/gal2.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/gal3.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/R9.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/R10.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/shoot2.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/shoot3.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/shoot4.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/R11.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/gal5.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/gele2.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/R12.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/R13.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/gal4.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/amir-seilsepour-_hAaFD1ucfk-unsplash.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/edz-norton-PEttXYw9hi8-unsplash.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/jamie-street-aMuq-Xz7R_M-unsplash.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/brid1.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/laura-chouette-yxcCgzSB_iI-unsplash.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/rosa-rafael-DEuob2v77wI-unsplash.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/rphot3.avif" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/rphot2.avif" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/shamblen-studios-xwM61TPMlYk-unsplash.jpg" class="img-fluid rounded shadow-sm" /></div>
+        <div class="col-md-4"><img src="image/Rlogo.png" class="img-fluid rounded shadow-sm" /></div>
+      </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="booking" class="container my-5">
+      <h2 class="section-title">Book an Appointment</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Replace with your actual Web3Forms Access Key -->
+                    <input type="hidden" name="access_key" value="0f81bcdd-6b94-4e1c-aad5-46879677c0d9" />
+
+                    <!-- Redirect to Thank You page after successful submission -->
+                    <input type="hidden" name="redirect" value="thankyou.html" />
+
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Phone</label>
+                        <input type="text" name="phone" class="form-control" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Service Type</label>
+                        <select name="service" class="form-select">
+                            <option>Bridal Glam</option>
+                            <option>Party Glam</option>
+                            <option>Photoshoot Look</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Preferred Date</label>
+                        <input type="date" name="date" class="form-control" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Address</label>
+                        <textarea name="message" rows="3" class="form-control"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Message</label>
+                        <textarea name="message" rows="3" class="form-control"></textarea>
+                    </div>
+                    <input type="checkbox" name="botcheck" class="d-none" style="display:none;" />
+                    <button type="submit" class="btn btn-pink w-100">Submit Booking</button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container my-5">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="text-center">
+        <p>Email: <a href="mailto:emmanueldanoyekoya@gmail.com">emmanueldanoyekoya@gmail.com</a></p>
+        <p>Instagram: <a href="https://instagram.com/manieedgebeauty" target="_blank">@joycemakeovers</a></p>
+        <p>Phone: 0905-042-8667, 0912-952-1020</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Joyce Makeovers | Designed by Emmanuel Oyekoya</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
